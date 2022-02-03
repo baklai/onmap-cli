@@ -15,15 +15,11 @@ const onmapSchema = new Schema(
     flags: {
       type: Array,
       default: null
-    },
-    userID: {
-      type: Schema.Types.ObjectId,
-      default: null,
-      ref: 'user'
     }
   },
   {
-    strict: false
+    strict: false,
+    timestamps: true
   }
 );
 
