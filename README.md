@@ -19,16 +19,24 @@ git clone {repository URL}
 npm i
 ```
 
-## Create "onmap-cli.js" file
+## Create file onmap-cli.js
 
 ```
-const onmap = require('./src');
+const { onmap } = require('./src');
 
 const TITLE = 'Test scan';
 const FLAGS = ['-A', '-v', '-Pn', '-O', '-no-stylesheet'];
 const TARGETS = ['127.0.0.1'];
 
-onmap.scanner(TITLE, FLAGS, TARGETS);
+(async () => {
+  try {
+    await onmap(TITLE, FLAGS, TARGETS);
+    consola.success(`Scan success all at ${new Date().toLocaleString()}`);
+  } catch (err) {
+    consola.error(err);
+  }
+  process.exit(1);
+})();
 ```
 
 ## Running application
