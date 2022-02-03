@@ -17,6 +17,7 @@
   "dependencies": {
     "consola": "^2.15.3",
     "dotenv": "^16.0.0",
+    "ip-cidr": "^3.0.4",
     "libnmap": "^0.4.19",
     "mongoose": "^6.2.0"
   }
