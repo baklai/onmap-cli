@@ -1,0 +1,23 @@
+{
+  "name": "onmap-cli",
+  "version": "1.0.0",
+  "description": "CLI Online Network Mapper",
+  "main": "onmap-cli.js",
+  "scripts": {
+    "start": "node onmap-cli"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "mongodb",
+    "nmap"
+  ],
+  "author": "Dmitrii Baklai",
+  "license": "MIT",
+  "dependencies": {
+    "consola": "^2.15.3",
+    "dotenv": "^16.0.0",
+    "libnmap": "^0.4.19",
+    "mongoose": "^6.2.0"
+  }
+}
