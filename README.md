@@ -19,6 +19,14 @@ git clone {repository URL}
 npm i
 ```
 
+## Environment variables
+
+Create a .env file in the root of your project:
+
+```
+MONGO_URI=mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
+```
+
 ## Create file onmap-cli.js
 
 ```
