@@ -35,19 +35,19 @@ const onmap = async (title, flags, targets) => {
         reject(err);
       } else {
         for (let item in report) {
-          await Report.findOneAndUpdate(
-            { target: item },
-            {
+          try {
+            await Report.create({
               title: title || 'ONMAP CLI Scan',
               target: item,
               flags: opts.flags || [],
               ...report[item]
-            },
-            { new: true, upsert: true, useFindAndModify: false }
-          );
-          consola.success(
-            `Scan success for ${item} at ${new Date().toLocaleString()}\n`
-          );
+            });
+            consola.success(
+              `Scan success for ${item} at ${new Date().toLocaleString()}\n`
+            );
+          } catch (err) {
+            reject(err);
+          }
         }
         resolve(true);
       }
